@@ -15,7 +15,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseEntity {
+public class UserDTO extends BaseEntity {
 
     private String firstName;
     private String lastName;

@@ -17,7 +17,7 @@ public class Program {
     private Long duration;
     private String programName;
 
-    private List<User> userList;
+    private List<UserDTO> userList;
 
 
 }
