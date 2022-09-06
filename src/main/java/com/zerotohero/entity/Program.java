@@ -1,0 +1,29 @@
+package com.zerotohero.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.List;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name="programs")
+public class Program extends BaseEntity{
+
+    @OneToMany(mappedBy = "program")
+    private List<Subject> subject;
+    private Long studyProgress;
+    private Long duration;
+    private String programName;
+
+
+    @ManyToMany(mappedBy = "programList")
+    private List<User> userList;
+
+
+}
