@@ -10,8 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity
 @Table(name="users")
@@ -21,23 +20,20 @@ public class User extends BaseEntity{
     private String lastName;
     private String email;
     private Boolean enabled;
-    private String password;
+    //private String password;
     @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "r_id" ) //reference to the role_id
     private Role role;
 
 
-    @ManyToMany
-    @JoinTable(name = "user_program_rel",
-            joinColumns = @JoinColumn(name="user_id"),
-            inverseJoinColumns = @JoinColumn(name = "program_id"))
-    private Set<Program> programList;
+    @ManyToOne
+    private Program programList;
 
 
 
-    @Override
+    /*@Override
     public String toString() {
         return "User{" +
                 "createdBy=" + createdBy +
@@ -48,8 +44,7 @@ public class User extends BaseEntity{
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", enabled=" + enabled +
-                ", password='" + password + '\'' +
                 ", userStatus=" + userStatus +
                 '}';
-    }
+    }*/
 }

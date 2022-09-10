@@ -5,7 +5,6 @@ import com.zerotohero.entity.User;
 import com.zerotohero.mapper.MapperUtil;
 import com.zerotohero.repository.UserRepository;
 import com.zerotohero.service.UserService;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,12 +15,12 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final MapperUtil mapperUtil;
-    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, MapperUtil mapperUtil, PasswordEncoder passwordEncoder) {
+
+    public UserServiceImpl(UserRepository userRepository, MapperUtil mapperUtil) {
         this.userRepository = userRepository;
         this.mapperUtil = mapperUtil;
-        this.passwordEncoder = passwordEncoder;
+
     }
 
     @Override
@@ -34,7 +33,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(UserDTO dto) {
-        dto.setPassword(passwordEncoder.encode(dto.getPassword()));
+        //dto.setPassword(passwordEncoder.encode(dto.getPassword()));
         dto.setEnabled(true);
         userRepository.save(mapperUtil.convert(dto, new User()));
     }
@@ -47,7 +46,6 @@ public class UserServiceImpl implements UserService {
         //set id to converted object which we found in DB by Email
         convertedUser.setId(user.getId());
         convertedUser.setEnabled(user.getEnabled());
-        convertedUser.setPassword(user.getPassword());
         userRepository.save(convertedUser);
 
         return findByEmail(dto.getEmail());

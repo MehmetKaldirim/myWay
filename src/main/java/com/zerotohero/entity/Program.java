@@ -22,7 +22,7 @@ public class Program extends BaseEntity{
     private String programName;
 
 
-    @ManyToMany(mappedBy = "programList")
+    @OneToMany
     private List<User> userList;
 
 

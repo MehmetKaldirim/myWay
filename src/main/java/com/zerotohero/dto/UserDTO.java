@@ -21,7 +21,7 @@ public class UserDTO extends BaseEntity {
     private String lastName;
     private String email;
     private Boolean enabled;
-    private String password;
+    //private String password;
     @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
     @OneToOne(fetch = FetchType.LAZY)
@@ -48,7 +48,6 @@ public class UserDTO extends BaseEntity {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", enabled=" + enabled +
-                ", password='" + password + '\'' +
                 ", userStatus=" + userStatus +
                 '}';
     }
