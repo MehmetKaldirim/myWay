@@ -1,5 +1,6 @@
 package com.zerotohero.dto;
 
+import com.zerotohero.enums.ProgramStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class ProgramDTO {
     private Long studyProgress;
     private Long duration;
     private String programName;
+    private ProgramStatus programStatus;
 
     private List<UserDTO> userList;
 
