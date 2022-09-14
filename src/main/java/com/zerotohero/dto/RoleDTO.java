@@ -1,16 +1,12 @@
 package com.zerotohero.dto;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
 
 
 @Data
 @NoArgsConstructor
-public class Role {
+public class RoleDTO {
 
     private Long id;
     private String description;

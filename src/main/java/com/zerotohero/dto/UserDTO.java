@@ -26,7 +26,7 @@ public class UserDTO extends BaseEntity {
     private UserStatus userStatus;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "r_id" ) //reference to the role_id
-    private Role role;
+    private RoleDTO role;
 
 
     @ManyToMany

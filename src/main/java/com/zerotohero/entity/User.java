@@ -29,7 +29,7 @@ public class User extends BaseEntity{
 
 
     @ManyToOne
-    private Program programList;
+    private Program program;
 
 
 

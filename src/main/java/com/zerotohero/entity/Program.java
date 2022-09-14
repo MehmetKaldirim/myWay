@@ -15,6 +15,7 @@ import java.util.List;
 @Table(name="programs")
 public class Program extends BaseEntity{
 
+    private String programCode;
     @OneToMany(mappedBy = "program")
     private List<Subject> subject;
     private Long studyProgress;
