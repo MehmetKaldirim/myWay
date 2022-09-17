@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -14,8 +15,6 @@ import java.util.List;
 public class Program extends BaseEntity{
 
     private String programCode;
-    @OneToMany(mappedBy = "program")
-    private List<Subject> subject;
     private Long studyProgress;
     private Long duration;
     private String programName;
@@ -23,9 +22,7 @@ public class Program extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private ProgramStatus programStatus;
 
-
     @OneToMany
-    private List<User> userList;
-
+    Set<User> user;
 
 }

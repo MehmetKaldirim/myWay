@@ -29,6 +29,7 @@ public class User extends BaseEntity{
 
 
     @ManyToOne
+    @JoinColumn(name = "program_id" )
     private Program program;
 
 

@@ -71,8 +71,7 @@ public class ProgramServiceImpl implements ProgramService {
     @Override
     public Program programDetails(String userEmail) {
 
-        Program program = programRepository.findByUser_UserEmail(userEmail);
-
+        Program program = programRepository.findProgramByUser_email(userEmail);
         return program;
 
     }
