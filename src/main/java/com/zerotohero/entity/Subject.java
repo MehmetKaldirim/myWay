@@ -21,7 +21,5 @@ public class Subject extends BaseEntity{
     @ManyToOne
     private Program program;
 
-    @OneToMany(mappedBy = "subject")
-    private List<Topic> topic;
 }
 
