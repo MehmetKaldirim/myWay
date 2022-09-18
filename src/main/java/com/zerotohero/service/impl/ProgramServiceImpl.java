@@ -7,11 +7,13 @@ import com.zerotohero.mapper.MapperUtil;
 import com.zerotohero.repository.ProgramRepository;
 import com.zerotohero.service.ProgramService;
 import com.zerotohero.service.UserService;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ProgramServiceImpl implements ProgramService {
 
     private final MapperUtil mapperUtil;

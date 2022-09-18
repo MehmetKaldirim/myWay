@@ -6,13 +6,13 @@ VALUES (TRUE, 'Root'), -- 1
 
 
 
-INSERT INTO programs (created_by, created_time, is_deleted, updated_by, updated_time, program_code, program_name, study_progress, duration)
-VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FS01', 'Full Stack Developer Core', 0,500),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'JD01', 'Java Developer Spring',0,500),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'JS01', 'Java Developer Core', 0,700),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE01', 'CSS and HTML', 0,700),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE02', 'Angulor', 0, 700),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE03', 'React Developer',0,750);
+INSERT INTO programs (created_by, created_time, is_deleted, updated_by, updated_time, program_code, program_name,program_status, study_progress, duration)
+VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FS01', 'Full Stack Developer Core','OPEN', 0,500),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'JD01', 'Java Developer Spring','OPEN',0,500),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'JS01', 'Java Developer Core', 'OPEN', 0,700),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE01', 'CSS and HTML', 'OPEN',0,700),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE02', 'Angulor', 'OPEN',0, 700),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE03', 'React Developer','OPEN',0,750);
 
 
 INSERT INTO users (created_by, created_time, is_deleted, updated_by, updated_time, email, enabled, first_name, last_name,  user_status,  r_id,program_id)

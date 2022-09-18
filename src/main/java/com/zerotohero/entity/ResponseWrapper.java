@@ -27,10 +27,11 @@ public class ResponseWrapper {
         this.data = data;
     }
 
-    public ResponseWrapper(boolean b, String message, List<UserDTO> users, boolean b1) {
-        this.message = message;
-        this.code = HttpStatus.OK.value();
+    public ResponseWrapper(String message, Object data, HttpStatus httpStatus) {
         this.success = true;
+        this.message = message;
+        this.code = httpStatus.value();
+        this.data = data;
     }
 
     public ResponseWrapper(String message) {
@@ -38,5 +39,6 @@ public class ResponseWrapper {
         this.code = HttpStatus.OK.value();
         this.success = true;
     }
+
 
 }
