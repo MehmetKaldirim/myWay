@@ -18,5 +18,7 @@ public class Topic extends BaseEntity{
     private Long topicStudyProgress;
     @ManyToOne
     private Subject subject;
+    @ManyToOne
+    private User user;
 
 }

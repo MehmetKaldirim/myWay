@@ -1,6 +1,7 @@
 package com.zerotohero.dto;
 
 import com.zerotohero.entity.BaseEntity;
+import com.zerotohero.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class TopicDTO {
     private String title; // title of the subject
     private Long topicDuration; // hours of the subject
     private Long topicStudyProgress;
-    @ManyToOne
-    private SubjectDTO subject;
 
+    private SubjectDTO subject;
+    private User user;
 }
