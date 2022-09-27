@@ -1,11 +1,11 @@
 package com.zerotohero.enums;
 
-public enum ProgramStatus {
+public enum ProjectStatus {
     OPEN("Open"), IN_PROGRESS("In Progress"), COMPLETE("Completed");
 
     private final String value;
 
-    ProgramStatus(String value) {
+    ProjectStatus(String value) {
         this.value = value;
     }
 

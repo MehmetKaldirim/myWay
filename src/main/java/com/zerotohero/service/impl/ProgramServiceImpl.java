@@ -2,7 +2,7 @@ package com.zerotohero.service.impl;
 
 import com.zerotohero.dto.ProgramDTO;
 import com.zerotohero.entity.Program;
-import com.zerotohero.enums.ProgramStatus;
+import com.zerotohero.enums.ProjectStatus;
 import com.zerotohero.mapper.MapperUtil;
 import com.zerotohero.repository.ProgramRepository;
 import com.zerotohero.service.ProgramService;
@@ -65,7 +65,7 @@ public class ProgramServiceImpl implements ProgramService {
     @Override
     public void complete(String code) {
         Program program = programRepository.findByProgramCode(code);
-        program.setProgramStatus(ProgramStatus.COMPLETE);
+        program.setProgramStatus(ProjectStatus.COMPLETE);
         programRepository.save(program);
 
     }

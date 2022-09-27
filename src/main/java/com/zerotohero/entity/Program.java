@@ -1,11 +1,10 @@
 package com.zerotohero.entity;
 
-import com.zerotohero.enums.ProgramStatus;
+import com.zerotohero.enums.ProjectStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -20,7 +19,7 @@ public class Program extends BaseEntity{
     private String programName;
 
     @Enumerated(EnumType.STRING)
-    private ProgramStatus programStatus;
+    private ProjectStatus programStatus;
 
     @OneToMany
     Set<User> user;
