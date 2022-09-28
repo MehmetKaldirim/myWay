@@ -1,12 +1,10 @@
 package com.zerotohero.entity;
 
+import com.zerotohero.enums.SubjectStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -22,5 +20,8 @@ public class Subject extends BaseEntity{
     private Program program;
     @ManyToOne
     private User user;
+
+    @Enumerated(EnumType.STRING)
+    private SubjectStatus subjectStatus;
 }
 
