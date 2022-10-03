@@ -1,6 +1,6 @@
 package com.zerotohero.entity;
 
-import com.zerotohero.enums.ProjectStatus;
+import com.zerotohero.enums.ProgramStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,7 +19,7 @@ public class Program extends BaseEntity{
     private String programName;
 
     @Enumerated(EnumType.STRING)
-    private ProjectStatus programStatus;
+    private ProgramStatus programStatus;
 
     @OneToMany
     Set<User> user;

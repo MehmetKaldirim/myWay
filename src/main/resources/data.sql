@@ -24,7 +24,7 @@ VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'root@cydeo.c
        (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'mathiasweber@gmail.com', TRUE, 'mathias', 'weber', 'ACTIVE', 4, 6),
        (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'marcbatra@gmail.com', TRUE, 'Marc', 'Batra', 'ACTIVE', 4, 3);
 
-INSERT INTO subjects (created_by, created_time, is_deleted, updated_by, updated_time,  subject_duration, subject_status, subject_study_progress, title, program_id,user_id)
+INSERT INTO lectures (created_by, created_time, is_deleted, updated_by, updated_time,  lecture_duration, lecture_status, lecture_study_progress, title, program_id,user_id)
 VALUES (5, '2021-05-01 00:00:00', FALSE, 5, '2021-05-01 00:00:00', 180, 'OPEN', 0, 'Spring MVC', 1,5),
        (5, '2021-05-01 00:00:00', FALSE, 5, '2021-05-01 00:00:00', 180, 'OPEN', 0, 'Spring ORM', 1,5),
        (5, '2021-05-01 00:00:00', FALSE, 5, '2021-05-01 00:00:00', 180, 'OPEN', 0, 'React useState', 1,5),
