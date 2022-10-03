@@ -41,7 +41,6 @@ public class SubjectServiceImpl implements SubjectService {
     public void update(SubjectDTO dto) {
         Subject subject = subjectRepository.findByTitle(dto.getTitle());
         Subject convertedSubject = mapperUtil.convert(dto, new Subject());
-        //set id to converted object which we found in DB by Email
         convertedSubject.setId(subject.getId());
         subjectRepository.save(convertedSubject);
     }

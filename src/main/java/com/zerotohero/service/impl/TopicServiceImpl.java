@@ -2,6 +2,7 @@ package com.zerotohero.service.impl;
 
 import com.zerotohero.dto.SubjectDTO;
 import com.zerotohero.dto.TopicDTO;
+import com.zerotohero.entity.Subject;
 import com.zerotohero.entity.Topic;
 import com.zerotohero.enums.TopicStatus;
 import com.zerotohero.mapper.MapperUtil;
@@ -52,11 +53,18 @@ public class TopicServiceImpl implements TopicService {
 
     @Override
     public void update(TopicDTO dto) {
+        Topic topic = topicRepository.findByTitle(dto.getTitle());
+        Topic convertedTopic = mapperUtil.convert(dto, new Topic());
+        convertedTopic.setId(topic.getId());
+        topicRepository.save(convertedTopic);
 
     }
 
     @Override
     public void delete(Long id) {
+        Topic topic = topicRepository.findById(id).get();
+        topic.setIsDeleted(true);
+        topicRepository.save(topic);
 
     }
 
