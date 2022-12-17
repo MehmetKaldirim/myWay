@@ -2,6 +2,7 @@ package com.zerotohero.service.impl;
 
 import com.zerotohero.dto.LectureDTO;
 import com.zerotohero.dto.TopicDTO;
+import com.zerotohero.entity.Subject;
 import com.zerotohero.entity.Topic;
 import com.zerotohero.enums.TopicStatus;
 import com.zerotohero.mapper.MapperUtil;
