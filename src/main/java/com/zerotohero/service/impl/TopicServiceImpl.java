@@ -1,6 +1,6 @@
 package com.zerotohero.service.impl;
 
-import com.zerotohero.dto.SubjectDTO;
+import com.zerotohero.dto.LectureDTO;
 import com.zerotohero.dto.TopicDTO;
 
 import com.zerotohero.entity.Topic;
@@ -9,7 +9,6 @@ import com.zerotohero.mapper.MapperUtil;
 import com.zerotohero.repository.TopicRepository;
 import com.zerotohero.service.TopicService;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -79,12 +78,12 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public void deleteBySubject(SubjectDTO project) {
+    public void deleteBySubject(LectureDTO project) {
 
     }
 
     @Override
-    public void completeBySubject(SubjectDTO project) {
+    public void completeBySubject(LectureDTO project) {
 
     }
 
