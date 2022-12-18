@@ -1,6 +1,7 @@
 package com.zerotohero.service;
 
 import com.zerotohero.dto.UserDTO;
+import com.zerotohero.entity.User;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface UserService {
 
     List<UserDTO> listAllUsers();
 
-    void save(UserDTO dto);
+    User save(UserDTO dto);
 
     UserDTO update(UserDTO dto);
 

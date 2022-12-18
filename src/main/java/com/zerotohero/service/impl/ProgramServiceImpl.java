@@ -49,6 +49,7 @@ public class ProgramServiceImpl implements ProgramService {
     public void update(ProgramDTO dto) {
 
         Program program = programRepository.findByProgramCode(dto.getProgramCode());
+        System.out.println(program.getId());
         Program convertedProgram = mapperUtil.convert(dto, new Program());
         //set id to converted object which we found in DB by Email
         convertedProgram.setId(program.getId());

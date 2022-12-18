@@ -28,25 +28,25 @@ public class ProgramControllerWithWrapper {
                 .body(new ResponseWrapper("successfully retrieved",programService.listAllPrograms()));
     }
     @GetMapping("/{programCode}")
-    public ResponseEntity<ResponseWrapper> getUserByUserName(@PathVariable("programCode") String programCode) {
+    public ResponseEntity<ResponseWrapper> getProgramByProgramCode(@PathVariable("programCode") String programCode) {
         ProgramDTO program = programService.getByProjectCode(programCode);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully retrieved", program, HttpStatus.OK));
     }
 
     @PostMapping
-    public ResponseEntity<ResponseWrapper> createUser(@RequestBody ProgramDTO program) {
+    public ResponseEntity<ResponseWrapper> createProgram(@RequestBody ProgramDTO program) {
         programService.save(program);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseWrapper("Program is successfully created", HttpStatus.CREATED));
     }
 
     @PutMapping("/{programCode}")
-    public ResponseEntity<ResponseWrapper> updateUser(@PathVariable("programCode") String programCode, @RequestBody ProgramDTO program) {
+    public ResponseEntity<ResponseWrapper> updateProgram(@PathVariable("programCode") String programCode, @RequestBody ProgramDTO program) {
         programService.update(program);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully updated", program, HttpStatus.OK));
     }
 
-    @DeleteMapping("/{program}")
-    public ResponseEntity<ResponseWrapper> deleteUser(@PathVariable("program") String program) {
+    @DeleteMapping("/{programCode}")
+    public ResponseEntity<ResponseWrapper> deleteProgram(@PathVariable("programCode") String program) {
         programService.delete(program);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully deleted", HttpStatus.OK));
 
