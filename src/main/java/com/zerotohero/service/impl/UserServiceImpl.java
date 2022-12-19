@@ -44,15 +44,12 @@ public class UserServiceImpl implements UserService {
     public UserDTO update(UserDTO dto) {
 
         User user = userRepository.findByEmail(dto.getEmail());
-        System.out.println("here is email  = " + dto.getEmail());
+
         User convertedUser = mapperUtil.convert(dto, new User());
         //set id to converted object which we found in DB by Email
 
-        System.out.println("taka" + convertedUser.getFirstName());
         convertedUser.setId(user.getId());
         convertedUser.setEnabled(user.getEnabled());
-
-        System.out.println(" before save " + convertedUser);
         userRepository.save(convertedUser);
 
         return findByEmail(dto.getEmail());

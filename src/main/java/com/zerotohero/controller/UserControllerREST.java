@@ -27,13 +27,13 @@ public class UserControllerREST {
         return userService.save(user);
     }
 
-    @PutMapping("{id}")
-    public void updateUser(@PathVariable("id") Long id, @RequestBody UserDTO user){
+    @PutMapping
+    public void updateUser(@RequestBody UserDTO user){
 
         userService.update(user);
     }
 
-    @DeleteMapping("{email}")
+    @DeleteMapping("/{email}")
     public void deleteUserByEmail(@PathVariable("email") String email){
         userService.delete(email);
     }

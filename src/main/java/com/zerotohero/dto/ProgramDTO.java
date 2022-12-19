@@ -1,16 +1,16 @@
 package com.zerotohero.dto;
 
+import com.zerotohero.entity.BaseEntity;
 import com.zerotohero.enums.ProgramStatus;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class ProgramDTO {
+@Getter
+@Setter
+public class ProgramDTO extends BaseEntity {
 
     private Long id;
     private String programCode;
@@ -22,5 +22,15 @@ public class ProgramDTO {
 
     private List<UserDTO> userList;
 
-
+    @Override
+    public String toString() {
+        return "ProgramDTO{" +
+                ", programCode='" + programCode + '\'' +
+                ", subject=" + subject +
+                ", studyProgress=" + studyProgress +
+                ", duration=" + duration +
+                ", programName='" + programName + '\'' +
+                ", programStatus=" + programStatus +
+                '}';
+    }
 }

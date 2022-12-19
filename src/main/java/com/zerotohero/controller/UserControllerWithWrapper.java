@@ -39,8 +39,8 @@ public class UserControllerWithWrapper {
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseWrapper("User is successfully created", HttpStatus.CREATED));
     }
 
-    @PutMapping("/{email}")
-    public ResponseEntity<ResponseWrapper> updateUser(@PathVariable("email") String email, @RequestBody UserDTO user) {
+    @PutMapping
+    public ResponseEntity<ResponseWrapper> updateUser(@RequestBody UserDTO user) {
         userService.update(user);
         return ResponseEntity.ok(new ResponseWrapper("User is successfully updated", user, HttpStatus.OK));
     }

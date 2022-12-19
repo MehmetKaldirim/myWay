@@ -39,8 +39,8 @@ public class ProgramControllerWithWrapper {
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseWrapper("Program is successfully created", HttpStatus.CREATED));
     }
 
-    @PutMapping("/{programCode}")
-    public ResponseEntity<ResponseWrapper> updateProgram(@PathVariable("programCode") String programCode, @RequestBody ProgramDTO program) {
+    @PutMapping
+    public ResponseEntity<ResponseWrapper> updateProgram(@RequestBody ProgramDTO program) {
         programService.update(program);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully updated", program, HttpStatus.OK));
     }

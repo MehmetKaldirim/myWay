@@ -1,7 +1,9 @@
 package com.zerotohero.service.impl;
 
 import com.zerotohero.dto.ProgramDTO;
+import com.zerotohero.dto.UserDTO;
 import com.zerotohero.entity.Program;
+import com.zerotohero.entity.User;
 import com.zerotohero.enums.ProgramStatus;
 import com.zerotohero.mapper.MapperUtil;
 import com.zerotohero.repository.ProgramRepository;
@@ -42,6 +44,7 @@ public class ProgramServiceImpl implements ProgramService {
 
     @Override
     public void save(ProgramDTO dto) {
+
         programRepository.save(mapperUtil.convert(dto,new Program()));
     }
 
@@ -49,12 +52,16 @@ public class ProgramServiceImpl implements ProgramService {
     public void update(ProgramDTO dto) {
 
         Program program = programRepository.findByProgramCode(dto.getProgramCode());
-        System.out.println(program.getId());
+        System.out.println("here is program code and  id " + program.getProgramCode()+ program.getId());
+
+
         Program convertedProgram = mapperUtil.convert(dto, new Program());
         //set id to converted object which we found in DB by Email
         convertedProgram.setId(program.getId());
         programRepository.save(convertedProgram);
     }
+
+
 
     @Override
     public void delete(String code) {
