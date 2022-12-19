@@ -15,14 +15,28 @@ VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FS01', 'Full
        (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'FE03', 'React Developer','OPEN',0,750);
 
 
-INSERT INTO users (created_by, created_time, is_deleted, updated_by, updated_time, email, enabled, first_name, last_name, user_status, r_id, program_id)
-VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'root@cydeo.com', TRUE, 'Root', 'RootSurname', 'ACTIVE', 1,1),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'admin@cydeo.com', TRUE, 'Mike', 'Smith', 'ACTIVE', 2,1),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'instructor@cydeo.com', TRUE, 'Hamsik', 'sampu', 'ACTIVE', 3,1),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'rumicake@gmail.com', TRUE, 'Rumi', 'RumCake', 'ACTIVE', 4, 2),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'mehmetkaldirimde2@gmail.com', TRUE, 'Mehmet', 'Kal', 'ACTIVE', 4, 1),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'mathiasweber@gmail.com', TRUE, 'mathias', 'weber', 'ACTIVE', 4, 6),
-       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'marcbatra@gmail.com', TRUE, 'Marc', 'Batra', 'ACTIVE', 4, 3);
+INSERT INTO users (created_by, created_time, is_deleted, updated_by, updated_time, email, enabled, first_name, last_name, user_status, r_id)
+VALUES (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'root@cydeo.com', TRUE, 'Root', 'RootSurname', 'ACTIVE', 1),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'admin@cydeo.com', TRUE, 'Mike', 'Smith', 'ACTIVE', 2),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'instructor@cydeo.com', TRUE, 'Hamsik', 'sampu', 'ACTIVE', 3),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'developer1@cydeo.com', TRUE, 'Tarkan', 'Taka', 'ACTIVE', 4),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'developer2@cydeo.com', TRUE, 'Rumi', 'RumCake', 'ACTIVE', 4),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'developer3@cydeo.com', TRUE, 'mathias', 'weber', 'ACTIVE', 4),
+       (1, '2021-05-01 00:00:00', FALSE, 1, '2021-05-01 00:00:00', 'developer4@cydeo.com', TRUE, 'melek', 'sev', 'ACTIVE', 4);
+
+INSERT INTO user_program_rel (user_id, program_id) VALUES
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer1@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Core')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer1@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Spring')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer2@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Core')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer2@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Spring')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer3@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Core')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer3@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Java Developer Spring')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer3@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'Full Stack Developer Core')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer3@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'React Developer')),
+                                                       ((SELECT u.id from users u WHERE u.email = 'developer4@cydeo.com'), (SELECT p.id from programs p WHERE p.program_name = 'React Developer'));
+
+
+
 
 INSERT INTO lectures (created_by, created_time, is_deleted, updated_by, updated_time,  lecture_duration, lecture_status, lecture_study_progress, title, program_id,user_id)
 VALUES (5, '2021-05-01 00:00:00', FALSE, 5, '2021-05-01 00:00:00', 180, 'OPEN', 0, 'Spring MVC', 1,5),

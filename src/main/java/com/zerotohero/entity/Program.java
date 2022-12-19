@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -21,7 +22,7 @@ public class Program extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private ProgramStatus programStatus;
 
-    @OneToMany
-    Set<User> user;
+    @ManyToMany(mappedBy = "programList")
+    private List<User> userList;
 
 }

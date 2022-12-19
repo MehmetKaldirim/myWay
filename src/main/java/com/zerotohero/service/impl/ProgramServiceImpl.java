@@ -78,12 +78,12 @@ public class ProgramServiceImpl implements ProgramService {
 
     }
 
-    @Override
+ /*   @Override
     public Program programDetails(String userEmail) {
 
         Program program = programRepository.findProgramByUser_email(userEmail);
         return program;
 
-    }
+    }*/
 
 }

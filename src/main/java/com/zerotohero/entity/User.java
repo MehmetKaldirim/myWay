@@ -23,16 +23,21 @@ public class User extends BaseEntity{
     //private String password;
     @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
+
     @ManyToOne
     @JoinColumn(name = "r_id" ) //reference to the role_id
     private Role role;
 
 
-    @ManyToOne
+ /*   @ManyToOne
     @JoinColumn(name = "program_id" )
-    private Program program;
+    private Program program;*/
 
-
+    @ManyToMany
+    @JoinTable(name = "user_program_rel",
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name = "program_id"))
+    private List<Program> programList;
 
     /*@Override
     public String toString() {

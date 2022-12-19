@@ -7,6 +7,6 @@ public interface ProgramRepository extends JpaRepository<Program, Long> {
     Program findByProgramCode(String code);
 
 
-    Program findProgramByUser_email(String userEmail);
+
 
 }
