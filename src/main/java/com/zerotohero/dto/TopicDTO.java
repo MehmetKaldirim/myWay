@@ -18,8 +18,7 @@ public class TopicDTO {
     private Long topicDuration; // hours of the subject
     private Long topicStudyProgress;
 
-    private LectureDTO subject;
-    private User user;
+    private LectureDTO lecture;
     private TopicStatus topicStatus;
 
 }

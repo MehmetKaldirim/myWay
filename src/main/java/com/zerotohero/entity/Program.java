@@ -1,5 +1,6 @@
 package com.zerotohero.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zerotohero.enums.ProgramStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class Program extends BaseEntity{
     private ProgramStatus programStatus;
 
     @ManyToMany(mappedBy = "programList")
+    @JsonIgnore
     private List<User> userList;
 
 }

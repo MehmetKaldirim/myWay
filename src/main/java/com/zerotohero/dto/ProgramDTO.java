@@ -14,7 +14,7 @@ public class ProgramDTO extends BaseEntity {
 
     private Long id;
     private String programCode;
-    private List<LectureDTO> subject;
+    private List<LectureDTO> lecture;
     private Long studyProgress;
     private Long duration;
     private String programName;
@@ -26,7 +26,7 @@ public class ProgramDTO extends BaseEntity {
     public String toString() {
         return "ProgramDTO{" +
                 ", programCode='" + programCode + '\'' +
-                ", subject=" + subject +
+                ", lecture=" + lecture +
                 ", studyProgress=" + studyProgress +
                 ", duration=" + duration +
                 ", programName='" + programName + '\'' +

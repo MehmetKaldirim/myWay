@@ -17,9 +17,6 @@ public class Lecture extends BaseEntity{
     private Long lectureStudyProgress; // how much time has student completed from this subject
     @ManyToOne
     private Program program;
-    @ManyToOne
-    private User user;
-
     @Enumerated(EnumType.STRING)
     private LectureStatus lectureStatus;
 }

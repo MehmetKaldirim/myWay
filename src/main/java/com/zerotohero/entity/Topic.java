@@ -16,9 +16,7 @@ public class Topic extends BaseEntity{
     private Long topicDuration; // hours of the subject
     private Long topicStudyProgress;
     @ManyToOne
-    private Lecture subject;
-    @ManyToOne
-    private User user;
+    private Lecture lecture;
     @Enumerated(EnumType.STRING)
     private TopicStatus topicStatus;
 

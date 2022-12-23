@@ -1,5 +1,6 @@
 package com.zerotohero.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zerotohero.enums.UserStatus;
 import lombok.Data;
 import lombok.Getter;
@@ -37,20 +38,8 @@ public class User extends BaseEntity{
     @JoinTable(name = "user_program_rel",
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name = "program_id"))
+    @JsonIgnore
     private List<Program> programList;
 
-    /*@Override
-    public String toString() {
-        return "User{" +
-                "createdBy=" + createdBy +
-                ", createdTime=" + createdTime +
-                ", updatedBy=" + updatedBy +
-                ", updatedTime=" + updatedTime +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", enabled=" + enabled +
-                ", userStatus=" + userStatus +
-                '}';
-    }*/
+
 }

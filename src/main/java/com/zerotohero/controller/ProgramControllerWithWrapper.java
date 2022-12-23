@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/programs/api/v3")
 public class ProgramControllerWithWrapper {
@@ -21,12 +23,14 @@ public class ProgramControllerWithWrapper {
 
     @GetMapping
     public ResponseEntity<ResponseWrapper> getAllPrograms(){
-
+        List<ProgramDTO> projectDTOList = programService.listAllPrograms();
+        programService.listAllPrograms().forEach(System.out::println);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version", "Math.V3")
                 .body(new ResponseWrapper("successfully retrieved",programService.listAllPrograms()));
     }
+
     @GetMapping("/{programCode}")
     public ResponseEntity<ResponseWrapper> getProgramByProgramCode(@PathVariable("programCode") String programCode) {
         ProgramDTO program = programService.getByProjectCode(programCode);
