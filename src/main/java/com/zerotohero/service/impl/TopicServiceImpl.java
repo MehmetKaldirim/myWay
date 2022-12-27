@@ -1,6 +1,6 @@
 package com.zerotohero.service.impl;
 
-import com.zerotohero.dto.LectureDTO;
+import com.zerotohero.dto.SubjectDTO;
 import com.zerotohero.dto.TopicDTO;
 
 import com.zerotohero.entity.Topic;
@@ -78,12 +78,12 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public void deleteBySubject(LectureDTO project) {
+    public void deleteBySubject(SubjectDTO project) {
 
     }
 
     @Override
-    public void completeBySubject(LectureDTO project) {
+    public void completeBySubject(SubjectDTO project) {
 
     }
 

@@ -1,23 +1,23 @@
-package com.zerotohero.entity;
+package com.zerotohero.dto;
 
-import com.zerotohero.enums.LectureStatus;
+import com.zerotohero.entity.Program;
+import com.zerotohero.enums.SubjectStatus;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
-@Entity
-@Table(name="lectures")
-public class Lecture extends BaseEntity{
+@AllArgsConstructor
+public class SubjectDTO {
 
     private String title; // title of the subject
     private Long lectureDuration; // hours of the subject
     private Long lectureStudyProgress; // how much time has student completed from this subject
-    @ManyToOne
+    private SubjectStatus subjectStatus;
     private Program program;
-    @Enumerated(EnumType.STRING)
-    private LectureStatus lectureStatus;
+    private List<TopicDTO> topic;
 }
 

@@ -1,12 +1,12 @@
 package com.zerotohero.enums;
 
-public enum LectureStatus {
+public enum SubjectStatus {
 
     OPEN("Open"), IN_PROGRESS("In Progress"), COMPLETE("Completed");
 
     private final String value;
 
-    LectureStatus(String value) {
+    SubjectStatus(String value) {
         this.value = value;
     }
     public String getValue() {

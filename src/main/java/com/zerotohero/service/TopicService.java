@@ -1,6 +1,6 @@
 package com.zerotohero.service;
 
-import com.zerotohero.dto.LectureDTO;
+import com.zerotohero.dto.SubjectDTO;
 import com.zerotohero.dto.TopicDTO;
 import com.zerotohero.enums.TopicStatus;
 
@@ -15,9 +15,9 @@ public interface TopicService {
     int totalNonCompletedTask(String projectCode);
     int totalCompletedTask(String projectCode);
 
-    void deleteBySubject(LectureDTO project);
+    void deleteBySubject(SubjectDTO project);
 
-    void completeBySubject(LectureDTO project);
+    void completeBySubject(SubjectDTO project);
 
     List<TopicDTO> listAllTopicsByStatusIsNot(TopicStatus status);
 
