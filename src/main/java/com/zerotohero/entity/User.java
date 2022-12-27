@@ -40,7 +40,7 @@ public class User extends BaseEntity{
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name = "program_id"))
     @JsonIgnore
-    private List<Program> programList;
+    private Set<Program> programs;
 
 
 }

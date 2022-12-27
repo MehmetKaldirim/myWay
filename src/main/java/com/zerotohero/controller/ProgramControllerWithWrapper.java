@@ -24,14 +24,24 @@ public class ProgramControllerWithWrapper {
 
     @GetMapping
     public ResponseEntity<ResponseWrapper> getAllPrograms(){
-        List<ProgramDTO> projectDTOList = programService.listAllPrograms();
+        List<ProgramDTO> programDTOList = programService.listAllPrograms();
+
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .header("Version", "Math.V3")
+                .body(new ResponseWrapper("All program are successfully retrieved",programDTOList));
+    }
+
+    @GetMapping("/forUser/{email}")
+    public ResponseEntity<ResponseWrapper> getAllProgramsLoggedInUser(@PathVariable("email") String email){
+        List<ProgramDTO> programDTOList = programService.listAllProgramsLoggedInUser(email);
+        System.out.println("Here your programs");
         programService.listAllPrograms().forEach(System.out::println);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version", "Math.V3")
-                .body(new ResponseWrapper("successfully retrieved",programService.listAllPrograms()));
+                .body(new ResponseWrapper("Programs are successfully retrieved for an user",programDTOList ));
     }
-
     @GetMapping("/{programCode}")
     public ResponseEntity<ResponseWrapper> getProgramByProgramCode(@PathVariable("programCode") String programCode) {
         ProgramDTO program = programService.getByProjectCode(programCode);

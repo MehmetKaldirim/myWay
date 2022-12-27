@@ -42,6 +42,14 @@ public class ProgramServiceImpl implements ProgramService {
         return programDTOS;
     }
 
+    public List<ProgramDTO> listAllProgramsLoggedInUser(String email){
+        List<ProgramDTO> programDTOS = programRepository.findProgramByUsersEmail("developer3@cydeo.com").stream()
+                .map(program->mapperUtil.convert(program,new ProgramDTO()))
+                .collect(Collectors.toList());
+        return programDTOS;
+    }
+
+
     @Override
     public void save(ProgramDTO dto) {
 

@@ -27,8 +27,8 @@ public class Program extends BaseEntity{
     @OneToMany
     private Set<Subject> subjectList;
 
-    @ManyToMany(mappedBy = "programList")
+    @ManyToMany(mappedBy = "programs")
     @JsonIgnore
-    private List<User> userList;
+    private Set<User> users;
 
 }

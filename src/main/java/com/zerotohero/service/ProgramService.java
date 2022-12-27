@@ -11,6 +11,8 @@ public interface ProgramService {
     ProgramDTO getByProjectCode(String code);
 
     List<ProgramDTO> listAllPrograms();
+
+    List<ProgramDTO> listAllProgramsLoggedInUser(String email);
     void save(ProgramDTO dto);
     void update(ProgramDTO dto);
     void delete(String code);
