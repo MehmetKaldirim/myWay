@@ -34,7 +34,13 @@ public class SubjectServiceImpl implements SubjectService {
                 .collect(Collectors.toList());
         return subjectDTOList;
     }
-
+    @Override
+    public List<SubjectDTO> listAllSubjectsByProgram(String programCode){
+        List<SubjectDTO> subjectDTOList = subjectRepository.findSubjectByProgramProgramCode("JS01").stream()
+                .map(subject->mapperUtil.convert(subject,new SubjectDTO()))
+                .collect(Collectors.toList());
+        return subjectDTOList;
+    }
     @Override
     public void save(SubjectDTO dto) {
         subjectRepository.save(mapperUtil.convert(dto,new Subject()));

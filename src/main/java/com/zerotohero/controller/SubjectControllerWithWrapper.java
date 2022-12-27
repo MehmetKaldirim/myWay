@@ -32,6 +32,16 @@ public class SubjectControllerWithWrapper {
                 .body(new ResponseWrapper("All subjects are successfully retrieved",subjectService.listAllSubjects()));
     }
 
+    @GetMapping("/byProgramCode/{programCode}")
+    public ResponseEntity<ResponseWrapper> getAllProgramsLoggedInUser(@PathVariable("programCode") String programCode){
+        List<SubjectDTO> subjectDTOList = subjectService.listAllSubjectsByProgram(programCode);
+
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .header("Version", "Math.V3")
+                .body(new ResponseWrapper("Subject are successfully retrieved for an user",subjectDTOList ));
+    }
+
     @GetMapping("/{title}")
     public ResponseEntity<ResponseWrapper> getSubjectByTitle(@PathVariable("title") String title) {
         SubjectDTO subject = subjectService.getByTitle(title);
