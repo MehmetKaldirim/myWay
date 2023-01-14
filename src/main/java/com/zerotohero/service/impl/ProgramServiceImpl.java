@@ -38,6 +38,7 @@ public class ProgramServiceImpl implements ProgramService {
     public List<ProgramDTO> listAllPrograms() {
         List<ProgramDTO> programDTOS = programRepository.findAll().stream()
                 .map(program->mapperUtil.convert(program,new ProgramDTO()))
+                .filter(a->a.getIsDeleted()== false)
                 .collect(Collectors.toList());
         return programDTOS;
     }
@@ -72,8 +73,8 @@ public class ProgramServiceImpl implements ProgramService {
 
 
     @Override
-    public void delete(String code) {
-        Program program = programRepository.findByProgramCode(code);
+    public void delete(Long id) {
+        Program program = programRepository.findById(id).get();
         program.setIsDeleted(true);
         programRepository.save(program);
     }

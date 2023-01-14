@@ -48,7 +48,7 @@ public class ProgramControllerWithWrapper {
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully retrieved", program, HttpStatus.OK));
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<ResponseWrapper> createProgram(@RequestBody ProgramDTO program) {
         programService.save(program);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseWrapper("Program is successfully created", HttpStatus.CREATED));
@@ -60,9 +60,9 @@ public class ProgramControllerWithWrapper {
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully updated", program, HttpStatus.OK));
     }
 
-    @DeleteMapping("/{programCode}")
-    public ResponseEntity<ResponseWrapper> deleteProgram(@PathVariable("programCode") String program) {
-        programService.delete(program);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ResponseWrapper> deleteProgram(@PathVariable("id") Long id) {
+        programService.delete(id);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully deleted", HttpStatus.OK));
 
     }
