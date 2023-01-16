@@ -1,13 +1,10 @@
 package com.zerotohero.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.zerotohero.dto.SubjectDTO;
 import com.zerotohero.enums.ProgramStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Data

@@ -48,6 +48,12 @@ public class ProgramControllerWithWrapper {
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully retrieved", program, HttpStatus.OK));
     }
 
+    @GetMapping("/programId/{id}")
+    public ResponseEntity<ResponseWrapper> getProgramByProgramId(@PathVariable("id") Long id) {
+        ProgramDTO program = programService.getById(id);
+        return ResponseEntity.ok(new ResponseWrapper("Program is successfully retrieved", program, HttpStatus.OK));
+    }
+
     @PostMapping()
     public ResponseEntity<ResponseWrapper> createProgram(@RequestBody ProgramDTO program) {
         programService.save(program);

@@ -35,6 +35,11 @@ public class ProgramServiceImpl implements ProgramService {
     }
 
     @Override
+    public ProgramDTO getById(Long id) {
+        Program program = programRepository.findById(id).get();
+        return mapperUtil.convert(program, new ProgramDTO());
+    }
+    @Override
     public List<ProgramDTO> listAllPrograms() {
         List<ProgramDTO> programDTOS = programRepository.findAll().stream()
                 .map(program->mapperUtil.convert(program,new ProgramDTO()))

@@ -10,6 +10,8 @@ public interface ProgramService {
 
     ProgramDTO getByProjectCode(String code);
 
+    ProgramDTO getById(Long Id);
+
     List<ProgramDTO> listAllPrograms();
 
     List<ProgramDTO> listAllProgramsLoggedInUser(String email);

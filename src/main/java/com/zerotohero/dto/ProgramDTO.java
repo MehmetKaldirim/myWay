@@ -23,7 +23,7 @@ public class ProgramDTO extends BaseEntity {
 
     private Set<UserDTO> userList;
 
-    private Set<SubjectDTO> subjeytList;
+    private Set<SubjectDTO> subjectList;
     @Override
     public String toString() {
         return "ProgramDTO{" +
