@@ -21,8 +21,6 @@ public class Program extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private ProgramStatus programStatus;
 
-    @OneToMany
-    private Set<Subject> subjectList;
 
     @ManyToMany(mappedBy = "programs")
     @JsonIgnore
