@@ -49,7 +49,7 @@ public class ProgramServiceImpl implements ProgramService {
     }
 
     public List<ProgramDTO> listAllProgramsLoggedInUser(String email){
-        List<ProgramDTO> programDTOS = programRepository.findProgramByUsersEmail("developer3@cydeo.com").stream()
+        List<ProgramDTO> programDTOS = programRepository.findProgramByUsersEmail(email).stream()
                 .map(program->mapperUtil.convert(program,new ProgramDTO()))
                 .collect(Collectors.toList());
         return programDTOS;
@@ -65,7 +65,7 @@ public class ProgramServiceImpl implements ProgramService {
     @Override
     public void update(ProgramDTO dto) {
 
-        Program program = programRepository.findByProgramCode(dto.getProgramCode());
+        Program program = programRepository.findById(dto.getId()).get();
         System.out.println("here is program code and  id " + program.getProgramCode()+ program.getId());
 
 

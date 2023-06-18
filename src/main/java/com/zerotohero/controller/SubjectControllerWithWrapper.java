@@ -39,7 +39,7 @@ public class SubjectControllerWithWrapper {
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version", "Math.V3")
-                .body(new ResponseWrapper("Subject are successfully retrieved for an user",subjectDTOList ));
+                .body(new ResponseWrapper("Subject are successfully retrieved for an program",subjectDTOList ));
     }
 
     @GetMapping("/{title}")

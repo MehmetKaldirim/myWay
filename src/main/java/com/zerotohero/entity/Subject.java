@@ -17,6 +17,8 @@ public class Subject extends BaseEntity{
     private Long subjectStudyProgress; // how much time has student completed from this subject
     @ManyToOne
     private Program program;
+    @ManyToOne
+    private User user;
     @Enumerated(EnumType.STRING)
     private SubjectStatus subjectStatus;
 }
